@@ -1,70 +1,147 @@
-# Getting Started with Create React App
+# 🤖 AI Chess Agent Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An intelligent chess training and analysis platform powered by AI. Play against AI, analyze positions, and improve your chess skills with real-time evaluation and move recommendations.
 
-## Available Scripts
+![AI Chess Agent](https://img.shields.io/badge/AI-Chess%20Agent-blue)
+![React](https://img.shields.io/badge/React-18.x-61dafb)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![Python](https://img.shields.io/badge/Python-AI%20Service-yellow)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### 🎮 Play Mode
+- **Play against AI**: Challenge our intelligent chess AI that adapts to your skill level
+- **Real-time move validation**: Instant feedback on legal and illegal moves
+- **Auto-response**: AI responds within seconds with strategic moves
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🔬 Analyze Mode
+- **Position Analysis**: Get detailed evaluation of any chess position
+- **Top Moves Panel**: View the best 3 recommended moves with scores
+- **Real-time Evaluation Bar**: Visual thermometer showing who's winning
+  - White rises from bottom when white is ahead
+  - Black descends from top when black is ahead
+- **Material & Positional Scoring**: Understand the factors behind each evaluation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ✏️ Edit Mode
+- **Free Piece Placement**: Drag and drop pieces anywhere on the board
+- **Position Setup**: Create custom positions for analysis or practice
+- **FEN Import/Export**: Load positions using FEN notation or copy current position
+- **Clear & Reset**: Quickly clear the board or reset to starting position
 
-### `npm test`
+### 📊 Analysis Features
+- **Move History**: Track all moves made during the game
+- **Collapsible Panels**: Clean UI with expandable analysis sections
+- **Click-to-Play Variations**: Click on recommended moves to play them instantly
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+### Frontend
+- **React 18** - Modern UI framework
+- **react-chessboard** - Interactive chess board component
+- **chess.js** - Chess move validation and game logic
+- **CSS3** - Modern styling with gradients and animations
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
+- **Node.js / Express** - REST API server
+- **MongoDB** - Database for user data and game history
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### AI Service
+- **Python / FastAPI** - High-performance AI service
+- **python-chess** - Chess library for move generation
+- **Rule-based Engine** - Strategic move selection algorithm
+- **Optional ML Model** - Transformer-based move prediction (if available)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+### Prerequisites
+- Node.js 16+
+- Python 3.9+
+- MongoDB
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repositories**
+```bash
+# Frontend
+git clone https://github.com/rickywsb/online-chess-react-platform.git
+cd online-chess-react-platform
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Backend
+git clone https://github.com/rickywsb/online-chess-platform-node-server.git
+cd online-chess-platform-node-server
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# AI Service
+cd ai-service
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-## Learn More
+2. **Configure environment variables**
+```bash
+# Frontend (.env)
+REACT_APP_API_URL=http://localhost:5001/api
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Backend (.env)
+PORT=5001
+MONGODB_URI=your_mongodb_uri
+AI_SERVICE_URL=http://localhost:8000
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Start the services**
+```bash
+# Terminal 1 - AI Service
+cd ai-service
+python main.py
 
-### Code Splitting
+# Terminal 2 - Backend
+cd online-chess-platform-node-server
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Terminal 3 - Frontend
+cd online-chess-react-platform
+npm start
+```
 
-### Analyzing the Bundle Size
+4. **Open your browser**
+Navigate to `http://localhost:3001`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📱 Screenshots
 
-### Making a Progressive Web App
+### Home Page
+Modern dark theme with hero section, user stats, and quick navigation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Chess Analyzer
+- Interactive chessboard with evaluation bar
+- Mode selector (Play / Analyze / Edit)
+- Control buttons and FEN input
+- Move history and analysis panels
 
-### Advanced Configuration
+## 🎯 Roadmap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [ ] User authentication and profiles
+- [ ] Game history and statistics
+- [ ] Opening explorer and database
+- [ ] Puzzle training mode
+- [ ] Multiplayer online games
+- [ ] Mobile responsive improvements
+- [ ] Advanced AI with deep learning
 
-### Deployment
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### `npm run build` fails to minify
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
+
+## ��‍💻 Author
+
+**Ricky Wu**
+- GitHub: [@rickywsb](https://github.com/rickywsb)
+
+---
+
+⭐ Star this repo if you find it helpful!
