@@ -18,6 +18,7 @@ import LoginPage from './pages/LoginPage.js';
 import CartPage from './pages/CartPage.js';
 import RegisterPage from './pages/RegisterPage.js';
 import ProfilePage from './pages/Profile.js';
+import Course101 from "./pages/Course101";
 import AdminPage from './pages/AdminPage.js';
 import DetailPage from './pages/DetailPage';
 import TitlePlayersPage from './pages/TitlePlayersPage'; // 引入 TitlePlayersPage 组件
@@ -50,6 +51,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/profile/:id" element={<ProfilePage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/course101" element={<Course101 />} />
           </Routes>
         </div>
       </AuthProvider>

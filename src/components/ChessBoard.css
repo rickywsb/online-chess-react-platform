@@ -4,6 +4,10 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  padding: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .chessboard-container p {
@@ -13,18 +17,167 @@
 }
 
 .chessboard-wrapper {
-  width: 350px; /* Adjust the width as needed */
-  height: 350px; /* Adjust the height as needed */
+  width: 400px;
+  height: 400px;
 }
 
 .player-labels {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
 }
 
 .player-labels span {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
+}
+
+/* 游戏控制按钮 */
+.game-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.reset-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4);
+}
+
+.undo-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.undo-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.4);
+}
+
+.analyze-btn {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 233, 123, 0.4);
+}
+
+/* 游戏消息 */
+.game-message {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-weight: 500;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-message.thinking {
+  animation: pulse 1.5s infinite;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* 分析面板 */
+.analysis-panel {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-panel h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.analysis-panel p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.analysis-panel strong {
+  color: #333;
+}
+
+.close-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #5a6fd6;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+  .chessboard-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .player-labels {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .game-controls {
+    flex-direction: column;
+  }
+  
+  .control-btn {
+    width: 100%;
+  }
 }

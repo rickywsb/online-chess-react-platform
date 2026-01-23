@@ -3,6 +3,9 @@ import axios from 'axios';
 // Base URL for Chess.com API
 const CHESS_API_BASE_URL = 'https://api.chess.com/pub';
 
+// Base URL for our backend API
+const BACKEND_API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+
 // Function to get player profile details
 export const getPlayerProfile = async (username) => {
     try {
@@ -33,7 +36,7 @@ export const unfollowPlayer = async (chessPlayerUsername) => {
     return axios.get(`/api/player/${chessPlayerUsername}/followers`);
 };
 
-// 在 chessApi.js 中添加
+// Added to chessApi.js
 
 export const getPlayersByTitle = async (title) => {
     try {
@@ -56,3 +59,46 @@ export const addComment = async (chessPlayerUsername, comment) => {
   export const getComments = async (chessPlayerUsername) => {
     return axios.get(`/api/comments/${chessPlayerUsername}`);
   };
+
+// ==================== AI Chess Service API ====================
+
+/**
+ * AI service health check
+ */
+export const checkAIHealth = async () => {
+  try {
+    const response = await axios.get(`${BACKEND_API_BASE_URL}/chess/ai/health`);
+    return response.data;
+  } catch (error) {
+    console.error('AI health check failed:', error);
+    throw error;
+  }
+};
+
+/**
+ * Analyze chess position
+ * @param {string} fen - FEN format chess position string
+ */
+export const analyzePosition = async (fen) => {
+  try {
+    const response = await axios.post(`${BACKEND_API_BASE_URL}/chess/ai/analyze`, { fen });
+    return response.data;
+  } catch (error) {
+    console.error('Position analysis failed:', error);
+    throw error;
+  }
+};
+
+/**
+ * Get AI recommended best move
+ * @param {string} fen - FEN format chess position string
+ */
+export const getBestMove = async (fen) => {
+  try {
+    const response = await axios.post(`${BACKEND_API_BASE_URL}/chess/ai/best-move`, { fen });
+    return response.data;
+  } catch (error) {
+    console.error('Get best move failed:', error);
+    throw error;
+  }
+};

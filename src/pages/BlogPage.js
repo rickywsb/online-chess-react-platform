@@ -32,7 +32,7 @@ const BlogPage = () => {
       description: "An exclusive look at Sibo Wu's personal chess sets and signed memorabilia.",
       date: "September 18-19, 2024",
       author: "Sibo Wu",
-      image: "https://drive.google.com/file/d/17NJNzuKByA09X6IzKcmSMiO0TOP9jBTk/view?usp=sharing",
+      image: "https://github.com/rickywsb/online-chess-react-platform/blob/master/src/images/1.png",
       content: "This section of the exhibition features Sibo Wu's personal collection of signed chess sets and memorabilia, giving visitors a chance to connect with the physical artifacts that represent key moments in his chess journey."
     }
   ];
