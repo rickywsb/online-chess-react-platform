@@ -35,20 +35,46 @@ useEffect(() => {
 
   return (
     <div className="course-details-container">
-      <h3 className="course-title">{course.title}</h3>
-      <p className="course-subtitle">{course.description}</p>
+      {/* Course Cover Image */}
+      <div className="course-image">
+        {course.coverImage ? (
+          <>
+            <img src={course.coverImage} alt={course.title} />
+            {course.category && (
+              <span className="course-category-badge">{course.category}</span>
+            )}
+          </>
+        ) : (
+          <div className="course-image-placeholder">
+            ♟️
+            {course.category && (
+              <span className="course-category-badge">{course.category}</span>
+            )}
+          </div>
+        )}
+      </div>
+      
+      {/* Card Content */}
+      <div className="course-card-content">
+        <h3 className="course-title">{course.title}</h3>
+        {course.authorName && (
+          <p className="course-author">by <span>{course.authorName}</span></p>
+        )}
+        <p className="course-subtitle">{course.description}</p>
+      </div>
+      
       <div className="course-footer">
-        <span className="course-price">${course.price}</span>
-
-        
+        <span className="course-price">
+          {course.price === 0 ? 'Free' : `$${course.price}`}
+        </span>
 
          {/* 显示查看模块按钮 */}
          {canViewModules && (
   <div className="course-enrollment-status centered-link">
     <Link to={`/courses/${course._id}/modules`} className="view-modules-button">
-      View Modules
+      📚 View Modules
     </Link>
-    <p className="enrollment-notice">You are already enrolled in this course.</p>
+    <p className="enrollment-notice">Enrolled</p>
   </div>
 )}
 
@@ -65,16 +91,21 @@ useEffect(() => {
   </div>
 )}
       </div>
+      {enrolledStudents.length > 0 && (
       <div className="enrolled-students">
-      <h4>Coursemates</h4>
-      <ul>
-        {enrolledStudents.map(student => (
-          <li key={student._id}>
-            <Link to={`/profile/${student._id}`}>{student.username}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <h4>Coursemates</h4>
+        <ul>
+          {enrolledStudents.slice(0, 5).map(student => (
+            <li key={student._id}>
+              <Link to={`/profile/${student._id}`}>{student.username}</Link>
+            </li>
+          ))}
+          {enrolledStudents.length > 5 && (
+            <li><span>+{enrolledStudents.length - 5} more</span></li>
+          )}
+        </ul>
+      </div>
+      )}
     </div>
   );
 };

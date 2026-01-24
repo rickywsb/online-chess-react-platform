@@ -31,7 +31,7 @@ const Navbar = () => {
         {/* Logo / Brand */}
         <Link to="/home" className="navbar-brand" onClick={closeMobileMenu}>
           <span className="brand-icon">♟️</span>
-          <span className="brand-text">AI Chess Agent</span>
+          <span className="brand-text">SmartChessAI</span>
         </Link>
 
         {/* Mobile Menu Toggle */}
@@ -69,14 +69,6 @@ const Navbar = () => {
             >
               <span className="nav-icon">📝</span>
               Blog
-            </Link>
-            <Link 
-              to="/puzzle" 
-              className={`nav-link ${isActive('/puzzle') ? 'active' : ''}`}
-              onClick={closeMobileMenu}
-            >
-              <span className="nav-icon">🧩</span>
-              Puzzles
             </Link>
             <Link 
               to="/leaderboard" 

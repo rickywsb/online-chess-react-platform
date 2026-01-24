@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
+import { useNavigate } from 'react-router-dom';
 import { getBestMove, analyzePosition, checkAIHealth } from '../api/chessApi';
 import './ChessAnalyzer.css';
 
 const ChessAnalyzer = () => {
+  const navigate = useNavigate();
   const [game, setGame] = useState(new Chess());
   const [fen, setFen] = useState(game.fen());
   const [message, setMessage] = useState('');
@@ -17,6 +19,7 @@ const ChessAnalyzer = () => {
   const [fenInput, setFenInput] = useState('');
   const [evaluation, setEvaluation] = useState({ score: 0, advantage: 'Equal' }); // Real-time evaluation
   const [showVariations, setShowVariations] = useState(false); // Collapsed by default
+  const [showPlayMenu, setShowPlayMenu] = useState(false); // Play dropdown menu
 
   // Check AI service status
   useEffect(() => {
@@ -422,7 +425,7 @@ const ChessAnalyzer = () => {
     <div className="chess-analyzer">
       {/* Header */}
       <div className="analyzer-header">
-        <h2>🤖 AI Chess Analyzer</h2>
+        <h2>♟️ SmartChessAI</h2>
         <div className={`ai-status ${aiStatus}`}>
           <span className="status-dot"></span>
           AI: {aiStatus}
@@ -431,23 +434,44 @@ const ChessAnalyzer = () => {
 
       {/* Mode Selector */}
       <div className="mode-selector">
+        <div className="play-dropdown-container">
+          <button 
+            className={`mode-btn ${gameMode === 'play' ? 'active' : ''}`}
+            onClick={() => setShowPlayMenu(!showPlayMenu)}
+          >
+            ♟️ Play ▾
+          </button>
+          {showPlayMenu && (
+            <div className="play-dropdown-menu">
+              <button 
+                className="dropdown-item"
+                onClick={() => {
+                  switchMode('play');
+                  setShowPlayMenu(false);
+                }}
+              >
+                🤖 Play with AI
+              </button>
+              <button 
+                className="dropdown-item disabled"
+                disabled
+              >
+                👥 Play with Player (Coming Soon)
+              </button>
+            </div>
+          )}
+        </div>
         <button 
-          className={`mode-btn ${gameMode === 'play' ? 'active' : ''}`}
-          onClick={() => switchMode('play')}
+          className="mode-btn"
+          onClick={() => navigate('/puzzle')}
         >
-          ♟️ Play
+          🧩 Puzzle
         </button>
         <button 
-          className={`mode-btn ${gameMode === 'analyze' ? 'active' : ''}`}
-          onClick={() => switchMode('analyze')}
+          className="mode-btn"
+          onClick={() => navigate('/courses')}
         >
-          🔬 Analyze
-        </button>
-        <button 
-          className={`mode-btn ${gameMode === 'edit' ? 'active' : ''}`}
-          onClick={() => switchMode('edit')}
-        >
-          ✏️ Edit
+          📚 Learn
         </button>
       </div>
 

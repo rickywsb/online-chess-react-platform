@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import CourseCard from '../components/Courses/CourseCard';
 import SearchBar from '../components/SearchBar.js';
@@ -47,7 +48,7 @@ const HomePage = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">
-            <span className="gradient-text">AI Chess Agent</span>
+            <span className="gradient-text">SmartChessAI</span>
           </h1>
           <p className="hero-subtitle">
             Welcome back, <span className="username-highlight">{username || 'Chess Player'}</span>!
@@ -58,24 +59,24 @@ const HomePage = () => {
             )}
           </p>
           <p className="hero-description">
-            Analyze positions, play against AI, and improve your chess skills with our intelligent chess platform.
+            Personalized AI training that adapts to your level. Practice puzzles, master openings with GM courses, and challenge players worldwide.
           </p>
         </div>
         <div className="hero-stats">
           <div className="stat-card">
-            <span className="stat-icon">🎮</span>
-            <span className="stat-value">Play</span>
-            <span className="stat-label">vs AI</span>
+            <span className="stat-icon">🤖</span>
+            <span className="stat-value">AI Training</span>
+            <span className="stat-label">Adaptive Learning</span>
           </div>
           <div className="stat-card">
-            <span className="stat-icon">🔬</span>
-            <span className="stat-value">Analyze</span>
-            <span className="stat-label">Positions</span>
+            <span className="stat-icon">🧩</span>
+            <span className="stat-value">Puzzles</span>
+            <span className="stat-label">Daily Practice</span>
           </div>
           <div className="stat-card">
             <span className="stat-icon">📚</span>
-            <span className="stat-value">Learn</span>
-            <span className="stat-label">Strategies</span>
+            <span className="stat-value">GM Courses</span>
+            <span className="stat-label">Master Classes</span>
           </div>
         </div>
       </div>
@@ -188,18 +189,18 @@ const HomePage = () => {
           {/* Quick Links */}
           <div className="quick-links">
             <h3>⚡ Quick Actions</h3>
-            <a href="/courses" className="quick-link">
+            <Link to="/courses" className="quick-link">
               <span className="link-icon">📚</span>
               <span>Browse Courses</span>
-            </a>
-            <a href="/profile" className="quick-link">
+            </Link>
+            <Link to="/profile" className="quick-link">
               <span className="link-icon">👤</span>
               <span>My Profile</span>
-            </a>
-            <a href="/blog" className="quick-link">
-              <span className="link-icon">📝</span>
-              <span>Chess Blog</span>
-            </a>
+            </Link>
+            <Link to="/puzzle" className="quick-link">
+              <span className="link-icon">🧩</span>
+              <span>Puzzles</span>
+            </Link>
           </div>
 
           {/* Features */}

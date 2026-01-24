@@ -55,7 +55,7 @@ export const deleteCourse = async (courseId) => {
 export const enrollInCourse = async (courseId) => {
   try {
     const token = localStorage.getItem('token'); // 或者从其他地方获取令牌
-    const response = await axios.post(`/api/courses/${courseId}/enroll`, {}, {
+    const response = await axios.post(`${API_BASE_URL}/${courseId}/enroll`, {}, {
       headers: {
         Authorization: `Bearer ${token}`
       }
