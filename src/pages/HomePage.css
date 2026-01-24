@@ -206,6 +206,116 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
+/* Chess TV Section */
+.chesstv-section h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.broadcasts-grid-home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.broadcast-card-home {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.broadcast-card-home:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.broadcast-card-home.live {
+  border-color: #e74c3c;
+}
+
+.broadcast-image-home {
+  height: 100px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.broadcast-image-home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.broadcast-image-home .no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.image-placeholder-home {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.live-badge-home {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e74c3c;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  animation: pulse-badge 2s infinite;
+}
+
+.broadcast-info-home {
+  padding: 12px;
+}
+
+.broadcast-info-home h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.broadcast-info-home .round-name {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
 /* Events Section */
 .events-section h2 {
   margin: 0 0 20px 0;
@@ -372,13 +482,19 @@
   font-size: 1.2rem;
 }
 
-/* Features Card */
-.features-card {
+/* Features Card / AI Features */
+.features-card,
+.ai-features {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   border-radius: 16px;
   padding: 20px;
   color: white;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ai-features h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
 }
 
 .features-card h3 {

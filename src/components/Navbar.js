@@ -78,6 +78,14 @@ const Navbar = () => {
               <span className="nav-icon">🏆</span>
               Leaderboard
             </Link>
+            <Link 
+              to="/chess-tv" 
+              className={`nav-link ${isActive('/chess-tv') ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              <span className="nav-icon">📺</span>
+              Chess TV
+            </Link>
             
             {/* Admin link - only for admin users */}
             {user?.role === 'admin' && (

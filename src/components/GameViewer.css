@@ -1,0 +1,259 @@
+/* Game Viewer Styles */
+.game-viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.game-viewer.no-game {
+  justify-content: center;
+  min-height: 400px;
+  color: #666;
+}
+
+/* Player Bars */
+.player-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.player-bar.white {
+  background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+  color: #333;
+}
+
+.player-bar.black {
+  background: linear-gradient(135deg, #333 0%, #222 100%);
+  color: #fff;
+}
+
+.player-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.player-name .title {
+  color: #c9a227;
+  font-weight: 700;
+}
+
+.player-rating {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Board Container */
+.board-container {
+  position: relative;
+}
+
+.board-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.loading-spinner.small {
+  width: 30px;
+  height: 30px;
+  border-width: 3px;
+}
+
+/* Move Controls */
+.move-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 500px;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 50px;
+  height: 40px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: #e0e0e0;
+  transform: translateY(-1px);
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.control-btn.play-btn {
+  background: #667eea;
+  color: white;
+  width: 60px;
+}
+
+.control-btn.play-btn:hover:not(:disabled) {
+  background: #5a6fd6;
+}
+
+.move-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.move-counter {
+  background: #f5f5f5;
+  padding: 5px 12px;
+  border-radius: 15px;
+}
+
+.current-move {
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+/* Game Status */
+.game-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.result-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.result-badge.ongoing {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.result-badge.waiting {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.result-badge.upcoming {
+  background: #e3e8ff;
+  color: #5c6bc0;
+}
+
+.result-badge.white-win {
+  background: #f5f5f5;
+  color: #333;
+  border: 2px solid #333;
+}
+
+.result-badge.black-win {
+  background: #333;
+  color: #fff;
+}
+
+.result-badge.draw {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.last-move {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Move List */
+.move-list {
+  width: 500px;
+  max-height: 200px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.move-list h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.moves-scroll {
+  max-height: 150px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+.move-item {
+  padding: 3px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.move-item:hover {
+  background: #e0e0e0;
+}
+
+.move-item.active {
+  background: #667eea;
+  color: white;
+}
+
+.move-number {
+  color: #888;
+  margin-right: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .player-bar,
+  .move-controls,
+  .move-list {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .control-btn {
+    width: 40px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .control-btn.play-btn {
+    width: 50px;
+  }
+}

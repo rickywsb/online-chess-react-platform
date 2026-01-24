@@ -24,6 +24,8 @@ import DetailPage from './pages/DetailPage';
 import TitlePlayersPage from './pages/TitlePlayersPage';
 import PuzzlePage from './pages/PuzzlePage.js';
 import LeaderboardPage from './pages/LeaderboardPage.js';
+import ChessTVPage from './pages/ChessTVPage.js';
+import BroadcastViewPage from './pages/BroadcastViewPage.js';
 
 function App() {
   return (
@@ -56,6 +58,8 @@ function App() {
             <Route path="/course101" element={<Course101 />} />
             <Route path="/puzzle" element={<PuzzlePage />} />
             <Route path="/leaderboard" element={<LeaderboardPage />} />
+            <Route path="/chess-tv" element={<ChessTVPage />} />
+            <Route path="/chess-tv/:tournamentId/:roundId" element={<BroadcastViewPage />} />
           </Routes>
         </div>
       </AuthProvider>

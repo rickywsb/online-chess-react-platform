@@ -82,17 +82,17 @@ const HomePage = () => {
         </div>
         <div className="hero-stats">
           <div className="stat-card">
-            <span className="stat-icon">🤖</span>
+            <span className="stat-icon">AI</span>
             <span className="stat-value">AI Training</span>
             <span className="stat-label">Adaptive Learning</span>
           </div>
           <div className="stat-card">
-            <span className="stat-icon">🧩</span>
+            <span className="stat-icon">P</span>
             <span className="stat-value">Puzzles</span>
             <span className="stat-label">Daily Practice</span>
           </div>
           <div className="stat-card">
-            <span className="stat-icon">📚</span>
+            <span className="stat-icon">GM</span>
             <span className="stat-value">GM Courses</span>
             <span className="stat-label">Master Classes</span>
           </div>
@@ -145,7 +145,7 @@ const HomePage = () => {
                   </div>
                 ) : (
                   <div className="empty-state">
-                    <span className="empty-icon">📖</span>
+                    <span className="empty-icon">Books</span>
                     <p>No enrolled courses yet.</p>
                     <a href="/courses" className="browse-btn">Browse Courses</a>
                   </div>
@@ -195,7 +195,7 @@ const HomePage = () => {
                     })
                   ) : (
                     <div className="empty-state">
-                      <span className="empty-icon">📺</span>
+                      <span className="empty-icon">TV</span>
                       <p>No broadcasts available</p>
                     </div>
                   )}
@@ -221,19 +221,19 @@ const HomePage = () => {
           <div className="quick-links">
             <h3>Quick Actions</h3>
             <Link to="/courses" className="quick-link">
-              <span className="link-icon">📚</span>
+              <span className="link-icon">Courses</span>
               <span>Browse Courses</span>
             </Link>
             <Link to="/profile" className="quick-link">
-              <span className="link-icon">👤</span>
+              <span className="link-icon">Profile</span>
               <span>My Profile</span>
             </Link>
             <Link to="/puzzle" className="quick-link">
-              <span className="link-icon">🧩</span>
+              <span className="link-icon">Puzzle</span>
               <span>Puzzles</span>
             </Link>
             <Link to="/chess-tv" className="quick-link">
-              <span className="link-icon">📺</span>
+              <span className="link-icon">TV</span>
               <span>Chess TV</span>
             </Link>
           </div>
@@ -242,23 +242,23 @@ const HomePage = () => {
             <h3>AI Features</h3>
             <ul className="feature-list">
               <li>
-                <span className="feature-icon">✅</span>
+                <span className="feature-icon">OK</span>
                 Best move suggestions
               </li>
               <li>
-                <span className="feature-icon">✅</span>
+                <span className="feature-icon">OK</span>
                 Evaluation bar
               </li>
               <li>
-                <span className="feature-icon">✅</span>
+                <span className="feature-icon">OK</span>
                 Move variations
               </li>
               <li>
-                <span className="feature-icon">✅</span>
+                <span className="feature-icon">OK</span>
                 FEN import/export
               </li>
               <li>
-                <span className="feature-icon">✅</span>
+                <span className="feature-icon">OK</span>
                 Play vs AI opponent
               </li>
             </ul>
