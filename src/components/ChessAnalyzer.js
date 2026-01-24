@@ -23,7 +23,8 @@ const ChessAnalyzer = () => {
     const checkAI = async () => {
       try {
         const health = await checkAIHealth();
-        if (health.status === 'ok') {
+        // Accept both 'ok' and 'healthy' status
+        if (health.status === 'ok' || health.status === 'healthy') {
           setAiStatus('online');
         } else {
           setAiStatus('degraded');

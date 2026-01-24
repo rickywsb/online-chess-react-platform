@@ -18,7 +18,8 @@ const ChessBoard = () => {
     const checkAI = async () => {
       try {
         const health = await checkAIHealth();
-        if (health.status === 'ok') {
+        // Accept both 'ok' and 'healthy' status
+        if (health.status === 'ok' || health.status === 'healthy') {
           setAiStatus('🟢 Online');
         } else {
           setAiStatus('🟡 Degraded');

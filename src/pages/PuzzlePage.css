@@ -1,0 +1,353 @@
+/* Puzzle Page Styles */
+
+.puzzle-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 20px;
+  padding-top: 80px;
+}
+
+.puzzle-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Stats Panel */
+.puzzle-stats-panel {
+  flex: 0 0 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.puzzle-stats-panel h2 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.stat-value.rating {
+  color: #64ffda;
+  font-size: 1.4rem;
+}
+
+.stat-value.streak {
+  color: #ff6b6b;
+}
+
+.login-prompt {
+  color: #8892b0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.login-prompt a {
+  color: #64ffda;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* Main Puzzle Area */
+.puzzle-main {
+  flex: 1;
+  min-width: 300px;
+}
+
+.puzzle-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.puzzle-info h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.puzzle-meta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.puzzle-rating {
+  background: rgba(100, 255, 218, 0.2);
+  color: #64ffda;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.puzzle-themes {
+  color: #8892b0;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+/* Board Container */
+.puzzle-board-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.puzzle-board {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Status Message */
+.puzzle-status {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.puzzle-status.loading {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.puzzle-status.playing {
+  background: rgba(33, 150, 243, 0.1);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.puzzle-status.correct {
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.puzzle-status.wrong {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.puzzle-status.complete {
+  background: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+.status-message {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.rating-change {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.rating-change.positive {
+  color: #4caf50;
+}
+
+.rating-change.negative {
+  color: #f44336;
+}
+
+/* Controls */
+.puzzle-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.puzzle-controls .btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-hint {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.btn-hint:hover:not(:disabled) {
+  background: rgba(255, 193, 7, 0.3);
+}
+
+.btn-hint:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-next {
+  background: linear-gradient(135deg, #64ffda 0%, #00bcd4 100%);
+  color: #1a1a2e;
+}
+
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+}
+
+.btn-retry {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-retry:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-retry:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Solution */
+.puzzle-solution {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.puzzle-solution h3 {
+  color: #f44336;
+  margin-bottom: 10px;
+}
+
+.puzzle-solution p {
+  color: #fff;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .puzzle-container {
+    flex-direction: column;
+  }
+
+  .puzzle-stats-panel {
+    flex: none;
+    width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .puzzle-page {
+    padding: 10px;
+    padding-top: 70px;
+  }
+
+  .puzzle-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .puzzle-controls .btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Turn Indicator */
+.turn-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+.turn-indicator.white {
+  background: linear-gradient(135deg, #f0f0f0 0%, #d4d4d4 100%);
+  color: #333;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.turn-indicator.black {
+  background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+  color: #fff;
+  border: 2px solid #555;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.turn-icon {
+  font-size: 1.5rem;
+}
+
+.turn-text {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+/* Board Container Updates */
+.puzzle-board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}

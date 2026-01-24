@@ -70,6 +70,22 @@ const Navbar = () => {
               <span className="nav-icon">📝</span>
               Blog
             </Link>
+            <Link 
+              to="/puzzle" 
+              className={`nav-link ${isActive('/puzzle') ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              <span className="nav-icon">🧩</span>
+              Puzzles
+            </Link>
+            <Link 
+              to="/leaderboard" 
+              className={`nav-link ${isActive('/leaderboard') ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              <span className="nav-icon">🏆</span>
+              Leaderboard
+            </Link>
             
             {/* Admin link - only for admin users */}
             {user?.role === 'admin' && (
